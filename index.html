@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Spotlight Demo</title>
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <link rel="stylesheet" href="spotlight.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background: rgb(37, 37, 37);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            gap: 30px;
+        }
+
+        .my-box,
+        .another-box {
+            width: 200px;
+            height: 100px;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .my-btn,
+        .another-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #444;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="my-box">Hover Me</div>
+    <div class="my-box ">Hover Me</div>
+    <div class="another-box">Hover Too</div>
+    <button class="my-btn">Click Me</button>
+    <button class="another-btn">Click Too</button>
+
+    <script src="spotlight.js"></script>
+    <script>
+        SpotlightEffect.applyTo('.my-box', {
+            size: 150, // Spotlight size in pixels
+            color: 'rgba(255, 255, 255, 0.36)', // Spotlight color on hover
+            clickColor: 'rgba(255, 255, 255, 0.36)', // Spotlight color on click
+            blur: 12, // Blur amount in pixels
+            hoverOpacity: 1, // Opacity during hover
+            clickScale: 5, // Scale factor for click animation
+            hoverDuration: 0.3, // Hover transition duration in seconds
+            clickDuration: 1, // Click animation duration in seconds
+            scaleDuration: 0.4 // Scale animation duration in seconds
+        });
+        SpotlightEffect.applyTo('.another-box', { size: 80 });
+        SpotlightEffect.applyTo('.my-btn', { size: 80 });
+    </script>
+</body>
+
+</html>

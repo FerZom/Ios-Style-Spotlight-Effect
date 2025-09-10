@@ -1,0 +1,52 @@
+.spotlight-effect::before {
+    content: '';
+    position: absolute;
+    top: var(--y, 50%);
+    left: var(--x, 50%);
+    width: var(--spotlight-size, 100px);
+    height: var(--spotlight-size, 100px);
+    pointer-events: none;
+    background: radial-gradient(circle, var(--spotlight-color, rgba(255,255,255,0.3)) 0%, transparent 80%);
+    transform: translate(-50%, -50%) scale(1);
+    filter: blur(var(--spotlight-blur, 10px));
+    opacity: var(--opacity, 0);
+    transition: opacity var(--hover-duration, 0.3s) ease;
+    border-radius: 50%;
+}
+
+.spotlight-effect.clicked::before {
+    animation: spotlightExpand var(--click-duration, 1s) forwards;
+    background: radial-gradient(circle, var(--spotlight-click-color, rgba(255,255,255,0.5)) 0%, transparent 80%);
+}
+
+@keyframes spotlightExpand {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: var(--hover-opacity, 1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(var(--click-scale, 5));
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(var(--click-scale, 5));
+        opacity: 0;
+    }
+}
+
+.spotlight-effect {
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--scale-duration, 0.4s) ease;
+}
+
+.spotlight-effect.clicked-scale {
+    animation: clickScale var(--scale-duration, 0.4s) forwards;
+}
+
+@keyframes clickScale {
+    0%   { transform: scale(1); }
+    30%  { transform: scale(1.08); }
+    60%  { transform: scale(0.98); }
+    100% { transform: scale(1); }
+}
