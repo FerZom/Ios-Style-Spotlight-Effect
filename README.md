@@ -9,7 +9,7 @@ This project is a HTML, CSS, and JavaScript application that provides an interac
 - Özelleştirilebilir ışık boyutu, renk, bulanıklık, opaklık ve animasyon süresi.
 - Farklı elementlere farklı efekt ayarları uygulama imkanı.
 - Tarayıcı dostu ve ek bağımlılık gerektirmeyen bir yapı.
-
+--------------------------------------------------------
 - Dynamic light effect that responds to mouse movements and clicks.
 - Customizable light size, color, blur, opacity, and animation duration.
 - Ability to apply different effect settings to various elements.
